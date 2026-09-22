@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 210" width="100%" height="210">
+  <defs>
+    <filter id="edgeGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b"/>
+      <stop offset="100%" stop-color="#121316"/>
+    </linearGradient>
+    <linearGradient id="laserBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.0"/>
+      <stop offset="80%" stop-color="#00f0ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="1.0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes scanLaser {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(72px); }
+      100% { transform: translateY(0px); }
+    }
+    .laser-line {
+      animation: scanLaser 2.2s ease-in-out infinite;
+    }
+    @keyframes lockCrosshair {
+      0% { transform: scale(0.92); opacity: 0.6; }
+      50% { transform: scale(1.06); opacity: 1.0; }
+      100% { transform: scale(0.92); opacity: 0.6; }
+    }
+    .crosshair-lock {
+      transform-origin: 745px 100px;
+      animation: lockCrosshair 1.8s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Card Backplate -->
+  <rect x="2" y="2" width="956" height="206" rx="8" fill="url(#cardBg)" stroke="#00f0ff" stroke-width="1.2" filter="url(#edgeGlow)"/>
+
+  <!-- Tactical Header Tag -->
+  <rect x="24" y="20" width="245" height="22" rx="4" fill="#083344" stroke="#00f0ff" stroke-width="0.8"/>
+  <text x="34" y="35" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#00f0ff" letter-spacing="0.08em">EDGE CV // HARDWARE EXECUTION</text>
+
+  <!-- Live Status Badge -->
+  <circle cx="890" cy="31" r="4" fill="#00f0ff"/>
+  <text x="902" y="35" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700" fill="#00f0ff">LATENCY: &lt;45ms</text>
+
+  <!-- Project Title -->
+  <text x="24" y="68" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="700" fill="#ffffff" letter-spacing="0.02em">Edge-AI Facial Recognition &amp; Microcontroller Trigger</text>
+
+  <!-- Project Description -->
+  <text x="24" y="92" font-family="JetBrains Mono, monospace" font-size="11.5" fill="#a1a1aa">
+    Engineered real-world biometric recognition engine connecting local computer vision with physical hardware execution.
+  </text>
+  <text x="24" y="110" font-family="JetBrains Mono, monospace" font-size="11.5" fill="#a1a1aa">
+    Utilized OpenCV for feature detection, bridging Python backend with microcontroller triggers executing actions at 30+ FPS.
+  </text>
+
+  <!-- Animated Biometric Scanning Wireframe Container -->
+  <g transform="translate(560, 52)">
+    <rect x="0" y="0" width="370" height="96" rx="6" fill="#050505" stroke="#27272a" stroke-width="1"/>
+
+    <!-- Biometric Wireframe Face Silhouette Mesh -->
+    <ellipse cx="185" cy="48" rx="34" ry="42" fill="none" stroke="#27272a" stroke-width="1" stroke-dasharray="3 3"/>
+    <ellipse cx="185" cy="44" rx="22" ry="28" fill="none" stroke="#3f3f46" stroke-width="1"/>
+    <circle cx="174" cy="40" r="3" fill="#00f0ff"/>
+    <circle cx="196" cy="40" r="3" fill="#00f0ff"/>
+    <path d="M178 58 Q185 64 192 58" fill="none" stroke="#00f0ff" stroke-width="1.5"/>
+
+    <!-- Animated Laser Sweep -->
+    <g class="laser-line">
+      <rect x="110" y="12" width="150" height="12" fill="url(#laserBeam)"/>
+      <line x1="100" y1="24" x2="270" y2="24" stroke="#00f0ff" stroke-width="2" filter="url(#edgeGlow)"/>
+    </g>
+
+    <!-- Targeting Corner Brackets -->
+    <g class="crosshair-lock">
+      <path d="M145 20 v-8 h8" fill="none" stroke="#00f0ff" stroke-width="1.8"/>
+      <path d="M225 20 v-8 h-8" fill="none" stroke="#00f0ff" stroke-width="1.8"/>
+      <path d="M145 76 v8 h8" fill="none" stroke="#00f0ff" stroke-width="1.8"/>
+      <path d="M225 76 v8 h-8" fill="none" stroke="#00f0ff" stroke-width="1.8"/>
+    </g>
+
+    <text x="355" y="86" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="9" fill="#00f0ff">TARGET LOCKED // 30+ FPS</text>
+  </g>
+
+  <!-- Bottom Metric Tags -->
+  <g transform="translate(24, 150)">
+    <rect x="0" y="0" width="105" height="26" rx="4" fill="#18181b" stroke="#3f3f46" stroke-width="0.8"/>
+    <text x="52" y="17" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600" fill="#f4f4f5">OPENCV</text>
+
+    <rect x="115" y="0" width="105" height="26" rx="4" fill="#18181b" stroke="#3f3f46" stroke-width="0.8"/>
+    <text x="167" y="17" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600" fill="#f4f4f5">PYTHON</text>
+
+    <rect x="230" y="0" width="155" height="26" rx="4" fill="#18181b" stroke="#3f3f46" stroke-width="0.8"/>
+    <text x="307" y="17" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600" fill="#f4f4f5">MICROCONTROLLER</text>
+
+    <rect x="395" y="0" width="135" height="26" rx="4" fill="#18181b" stroke="#3f3f46" stroke-width="0.8"/>
+    <text x="462" y="17" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600" fill="#f4f4f5">EDGE VISION</text>
+  </g>
+
+  <!-- View Repository Action Callout -->
+  <text x="936" y="184" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#00f0ff">VIEW HARDWARE PIPELINE ➔</text>
+</svg>
